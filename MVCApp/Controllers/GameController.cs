@@ -16,7 +16,7 @@ namespace MVCApp.Controllers
             if (string.IsNullOrEmpty(sortBy))
                 sortBy = "Release date";
 
-            return Content($"pageIndex={pageIndex} sortBy={sortBy}");
+            return Content($"pageIndex={pageIndex} sortBy={sortBy} hello world");
         }
 
         public ActionResult Random(int contentID)
