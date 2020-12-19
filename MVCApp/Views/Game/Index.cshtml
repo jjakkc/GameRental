@@ -1,0 +1,23 @@
+﻿@model MVCApp.ViewModels.GamesViewModel
+@{
+    ViewBag.Title = "Games";
+}
+
+<h1>Movies</h1>
+
+@{ 
+    <h3>Movie</h3>
+
+    if (Model.Games == null)
+    {
+        <p>There are currently no games.</p>
+    }
+    else
+    {
+        foreach (var game in Model.Games)
+        {
+            <p>@game.Title</p>
+        }
+    }
+}
+

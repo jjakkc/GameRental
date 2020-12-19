@@ -1,0 +1,16 @@
+﻿@model MVCApp.ViewModels.RandomGameViewModel
+@{
+    ViewBag.Title = "Random";
+}
+
+<h2>@Model.Game.Title</h2>
+<h4>Rented By:</h4>
+<ul>
+@{ 
+    foreach(var customer in Model.Customers)
+    {
+        <li>@customer.FirstName @customer.LastName</li>
+    }
+}
+</ul>
+
