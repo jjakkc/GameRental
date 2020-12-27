@@ -1,20 +1,20 @@
-﻿@model MVCApp.ViewModels.GamesViewModel
+﻿@model IEnumerable<MVCApp.Models.GameModel>
 @{
     ViewBag.Title = "Games";
 }
 
-<h1>Movies</h1>
+<h1>Games</h1>
 
 @{ 
-    <h3>Movie</h3>
+    <h3>Game</h3>
 
-    if (Model.Games == null)
+    if (Model == null)
     {
         <p>There are currently no games.</p>
     }
     else
     {
-        foreach (var game in Model.Games)
+        foreach (var game in Model)
         {
             <p>@game.Title</p>
         }

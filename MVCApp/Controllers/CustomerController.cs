@@ -10,38 +10,50 @@ namespace MVCApp.Controllers
 {
     public class CustomerController : Controller
     {
+        private MyDbContext _context;
+
+        public CustomerController()
+        {
+            _context = new MyDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Customer
         public ActionResult Index()
         {
-            var viewModel = new RandomGameViewModel
-            {
-                Customers = new List<CustomerModel>
-                {
-                    new CustomerModel(){ FirstName="Timmy", LastName="Jones"},
-                    new CustomerModel(){ FirstName="Jason", LastName="Glee"},
-                    new CustomerModel(){ FirstName="Sarah", LastName="Pooter"}
-                }
-            };
+            //var customers = GetCustomers();
+            // now we're pulling customer data from the dbset
+            var customers = _context.Customers.ToList();
 
-            return View(viewModel);
+            return View(customers);
         }
 
+        // GET: Customer/Details/id
         public ActionResult Details(int id)
         {
-            id = id - 1;
-            var customers = new List<CustomerModel>
-            {
-                new CustomerModel(){ FirstName="Timmy", LastName="Jones"},
-                new CustomerModel(){ FirstName="Jason", LastName="Glee"},
-                new CustomerModel(){ FirstName="Sarah", LastName="Pooter"}
-            };
+            //var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
-            if (id > customers.Count && id < customers.Count)
+            if (customer == null)
             {
                 return HttpNotFound();
             }
             
-            return View(customers[id]);
+            return View(customer);
         }
+
+        //private IEnumerable<CustomerModel> GetCustomers()
+        //{
+        //    return new List<CustomerModel>
+        //    {
+        //        new CustomerModel(){ Id = 1, FirstName="Timmy", LastName="Jones"},
+        //        new CustomerModel(){ Id = 2, FirstName="Jason", LastName="Glee"},
+        //        new CustomerModel(){ Id = 3, FirstName="Sarah", LastName="Pooter"}
+        //    };
+        //}
     }
 }

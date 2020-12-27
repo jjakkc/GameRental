@@ -1,4 +1,4 @@
-﻿@model MVCApp.ViewModels.RandomGameViewModel
+﻿@model IEnumerable<MVCApp.Models.CustomerModel>
 @{
     ViewBag.Title = "Customers";
 }
@@ -8,19 +8,20 @@
 @{
     <h3>Customer</h3>
 
-    if(Model.Customers == null)
+    if (Model == null)
     {
         <p>No customers.</p>
-    } 
+    }
     else
     {
-        for (int i = 0; i < Model.Customers.Count; i++)
+        foreach(var customer in Model)
         {
-            <p>@Html.ActionLink($"{Model.Customers[i].FirstName} {Model.Customers[i].LastName}", 
-                                "Details", "Customer", 
-                                new { id=i+1 }, null)
+            <p>
+                @Html.ActionLink($"{customer.FirstName} {customer.LastName}",
+                             "Details", "Customer",
+                             new { id = customer.Id }, null)
             </p>
         }
-    }
+}
 }
 

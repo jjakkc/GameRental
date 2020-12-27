@@ -24,20 +24,12 @@ namespace MVCApp.Controllers
         // GET: /Game
         public ActionResult Index()
         {
-            var viewModel = new GamesViewModel
-            {
-                Games = new List<GameModel>
-                {
-                    new GameModel { Title = "Final Fart 7" },
-                    new GameModel { Title= "Hello Kitty Adventures" },
-                    new GameModel { Title= "Simpsons Pool" },
-                    new GameModel { Title= "Halo 5" },
-                }
-            };
+            var games = GetGames();
 
-            return View(viewModel);
+            return View(games);
         }
 
+        // GET: Game/Random
         public ActionResult Random()
         {
             var game = new GameModel() { Title = "Final Fart 7", Genre = "Action RPG" };
@@ -58,6 +50,9 @@ namespace MVCApp.Controllers
             return View(viewModel);
         }
 
+        // GET: Game/released/2000/12
+        // doesn't work GET: Game/byreleasedate because attribute route?
+        [Route("game/released/{year:regex(\\d{4}):max(2020)}/{month:regex(\\d{1,2}):range(1,12)}")]
         public ActionResult ByReleaseDate(int year, int month)
         {
             string m = month.ToString();
@@ -65,6 +60,17 @@ namespace MVCApp.Controllers
                 m = "0" + m;
 
             return Content($"{year} | {m}");
+        }
+
+        private IEnumerable<GameModel> GetGames()
+        {
+            return new List<GameModel>
+            {
+                new GameModel { Title = "Final Fart 7" },
+                new GameModel { Title= "Hello Kitty Adventures" },
+                new GameModel { Title= "Simpsons Pool" },
+                new GameModel { Title= "Halo 5" },
+            };
         }
     }
 }
