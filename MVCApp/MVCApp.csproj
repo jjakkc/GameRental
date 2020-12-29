@@ -153,9 +153,9 @@
     <Compile Include="Migrations\202012270013493_ApplyAnnotationsToCustomerName.designer.cs">
       <DependentUpon>202012270013493_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012270042430_ApplyTableRenameAnnotationsToCustomerModel.cs" />
-    <Compile Include="Migrations\202012270042430_ApplyTableRenameAnnotationsToCustomerModel.designer.cs">
-      <DependentUpon>202012270042430_ApplyTableRenameAnnotationsToCustomerModel.cs</DependentUpon>
+    <Compile Include="Migrations\202012270119075_TestDropTable.cs" />
+    <Compile Include="Migrations\202012270119075_TestDropTable.designer.cs">
+      <DependentUpon>202012270119075_TestDropTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomerModel.cs" />
@@ -239,8 +239,8 @@
     <EmbeddedResource Include="Migrations\202012270013493_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>202012270013493_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012270042430_ApplyTableRenameAnnotationsToCustomerModel.resx">
-      <DependentUpon>202012270042430_ApplyTableRenameAnnotationsToCustomerModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012270119075_TestDropTable.resx">
+      <DependentUpon>202012270119075_TestDropTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

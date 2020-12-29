@@ -7,13 +7,13 @@ namespace MVCApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ApplyTableRenameAnnotationsToCustomerModel : IMigrationMetadata
+    public sealed partial class TestDropTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ApplyTableRenameAnnotationsToCustomerModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TestDropTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012270042430_ApplyTableRenameAnnotationsToCustomerModel"; }
+            get { return "202012270119075_TestDropTable"; }
         }
         
         string IMigrationMetadata.Source
