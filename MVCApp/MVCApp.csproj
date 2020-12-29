@@ -157,6 +157,14 @@
     <Compile Include="Migrations\202012270119075_TestDropTable.designer.cs">
       <DependentUpon>202012270119075_TestDropTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012290518387_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\202012290518387_AddNameToMembershipType.designer.cs">
+      <DependentUpon>202012290518387_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012290522040_UpdateMembershipTypeWithNames.cs" />
+    <Compile Include="Migrations\202012290522040_UpdateMembershipTypeWithNames.designer.cs">
+      <DependentUpon>202012290522040_UpdateMembershipTypeWithNames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\GameModel.cs" />
@@ -241,6 +249,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012270119075_TestDropTable.resx">
       <DependentUpon>202012270119075_TestDropTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012290518387_AddNameToMembershipType.resx">
+      <DependentUpon>202012290518387_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012290522040_UpdateMembershipTypeWithNames.resx">
+      <DependentUpon>202012290522040_UpdateMembershipTypeWithNames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
