@@ -21,5 +21,6 @@ namespace MVCApp.Models
         // called navigation property, allows going from customer to membership type
         public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; set; }
+        public DateTime? Birthdate { get; set; }
     }
 }
