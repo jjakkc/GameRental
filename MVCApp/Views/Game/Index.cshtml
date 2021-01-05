@@ -16,7 +16,8 @@
     {
         foreach (var game in Model)
         {
-            <p>@game.Title</p>
+            <p>@Html.ActionLink($"{game.Title}", "Details", "Game", new { id = game.Id }, null)</p>
+            //<p>@game.Title</p>
         }
     }
 }

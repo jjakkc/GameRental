@@ -2,6 +2,7 @@
 using MVCApp.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +11,17 @@ namespace MVCApp.Controllers
 {
     public class GameController : Controller
     {
+        private MyDbContext _context;
+
+        public GameController()
+        {
+            _context = new MyDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();    
+        }
         // GET: Game
         //public ActionResult Index(int? pageIndex, string sortBy)
         //{
@@ -24,15 +36,29 @@ namespace MVCApp.Controllers
         // GET: /Game
         public ActionResult Index()
         {
-            var games = GetGames();
+            //var games = GetGames();
+            var games = _context.Games.Include(game => game.Genre).ToList();
 
             return View(games);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var game = _context.Games.Include(g => g.Genre).FirstOrDefault();
+
+            if(game == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(game);
         }
 
         // GET: Game/Random
         public ActionResult Random()
         {
-            var game = new GameModel() { Title = "Final Fart 7", Genre = "Action RPG" };
+            var game = new GameModel() { Title = "Final Fart 7" };
+            game.Genre = new Genre { Name = "Action RPG" };
             var customers = new List<CustomerModel>
             {
                 new CustomerModel(){ FirstName="Timmy", LastName="Jones"},

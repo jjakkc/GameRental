@@ -165,9 +165,26 @@
     <Compile Include="Migrations\202012290522040_UpdateMembershipTypeWithNames.designer.cs">
       <DependentUpon>202012290522040_UpdateMembershipTypeWithNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012290543506_AddBirthdateToCustomer.cs" />
+    <Compile Include="Migrations\202012290543506_AddBirthdateToCustomer.designer.cs">
+      <DependentUpon>202012290543506_AddBirthdateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012310451196_UpdateGameWithStock.cs" />
+    <Compile Include="Migrations\202012310451196_UpdateGameWithStock.designer.cs">
+      <DependentUpon>202012310451196_UpdateGameWithStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012310456451_UpdateGameWithGenreId.cs" />
+    <Compile Include="Migrations\202012310456451_UpdateGameWithGenreId.designer.cs">
+      <DependentUpon>202012310456451_UpdateGameWithGenreId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012310458563_PopulateGenre.cs" />
+    <Compile Include="Migrations\202012310458563_PopulateGenre.designer.cs">
+      <DependentUpon>202012310458563_PopulateGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\GameModel.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -214,6 +231,7 @@
     <Content Include="Views\Game\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Game\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -255,6 +273,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012290522040_UpdateMembershipTypeWithNames.resx">
       <DependentUpon>202012290522040_UpdateMembershipTypeWithNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012290543506_AddBirthdateToCustomer.resx">
+      <DependentUpon>202012290543506_AddBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012310451196_UpdateGameWithStock.resx">
+      <DependentUpon>202012310451196_UpdateGameWithStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012310456451_UpdateGameWithGenreId.resx">
+      <DependentUpon>202012310456451_UpdateGameWithGenreId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012310458563_PopulateGenre.resx">
+      <DependentUpon>202012310458563_PopulateGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
